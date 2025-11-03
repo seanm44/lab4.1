@@ -1,0 +1,19 @@
+1. What status line did you get and what does it mean? HTTP/1.1 200 OK, it was successful
+
+2. What is the Server header value? Is it specific (nginx/1.22) or generic? Apache/2.4.7 (Ubuntu)
+
+3. What is the <title> of the page (if present)? Yes its called "Go ahead and ScanMe!"
+
+4. Do you see any <form> elements? What are their action attributes (copy them)? Yes there are form elements. This is what they do <form class="nst-search" id="nst-head-search" action="/search/">
+
+5. Did requests and curl report the same status and server header? Yes
+
+6. If different, what header or other factor might explain it (redirects, default headers, user agent)? Not different
+
+7. Did the response change (status, server header, content-length) when the User-Agent was MyTestAgent/1.0? Yes it changed
+
+8. If it had changed, what could that mean about the server’s defenses? They detected something unusual and limit or give false information
+
+9. What three pieces of information from the steps above would be most useful in a reconnaissance report, and why?
+
+10. One quick defensive suggestion an admin could use to reduce information leakage from headers.

@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://google.com",
+    "status": 200,
+    "final_url": "https://www.google.com/",
+    "server": "gws",
+    "content_type": "text/html; charset=ISO-8859-1",
+    "content_length": null
+  }
+]

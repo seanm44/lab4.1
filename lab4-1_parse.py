@@ -24,11 +24,16 @@ def parse_page(url, out_file=None):
             })
         forms.append({"method": method, "action": action, "inputs": inputs})
 
+    keywords = ["admin", "login", "debug", "error"]
+    text = soup.get_text(separator=" ").lower()
+    kw_counts = {k: text.count(k) for k in keywords}
+
     result = {
         "url": url,
         "title": title,
         "meta_description": meta_desc,
-        "forms": forms
+        "forms": forms,
+        "keyword_counts": kw_counts
     }
 
     if out_file:
@@ -39,6 +44,6 @@ def parse_page(url, out_file=None):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python lab1_parse.py <url> [out_file.json]")
+        print("Usage: python lab4-1_parse.py <url> [out_file.json]")
         sys.exit(1)
-    parse_page(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None
+    parse_page(sys.argv[1], sys.argv[2] if len(sys.argv) > 2 else None)
